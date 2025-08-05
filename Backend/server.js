@@ -64,7 +64,7 @@ app.use((err, req, res, next) => {
 });
 
 
-const path = require("path");
+
 
 const distPath = path.join(__dirname, "../Frontend/dist");
 app.use(express.static(distPath));
