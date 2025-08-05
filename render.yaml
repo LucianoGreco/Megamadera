@@ -5,7 +5,7 @@ services:
     buildCommand: |
       cd Frontend && npm install && npm run build &&
       cd ../Backend && npm install
-    startCommand: node index.js
+    startCommand: node server.js
     envVars:
       - key: MONGO_URI
         value: TU_MONGO_URI_AQUÍ
