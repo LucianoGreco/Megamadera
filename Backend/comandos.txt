@@ -1,0 +1,25 @@
+npm run seed:herrajes
+npm run seed:melaminas
+npm run seed:revestimientos
+
+node server.js:   Activa el servidor
+
+Los 3 estan funcionado:
+
+melaminas:
+http://localhost:4000/products/melaminas/tekaartico.jpg
+
+herrajes:
+http://localhost:4000/products/herrajes/bisagras/cazoleta/35mm/45g/1.jpg
+
+revestimientos 
+http://localhost:4000/products/revestimientos/pared/empapelados/amazing/amazing-408126-1.jpg
+http://localhost:4000/products/revestimientos/pared/adhesivos/plastiwall-1kg.png
+http://localhost:4000/products/revestimientos/pared/ceramicos y wallstickers/ceramicos venecitas azulejos/azulejo-16211-1.png
+
+
+
+http://localhost:4000/products/herrajes/bisagras/bisagra-cazoleta-35mm-45g2-1.jpg
+http://localhost:4000/products/herrajes/amortiguadores/amortiguador-aplicar1-1.jpg
+
+http://localhost:4000/products/herrajes/amortiguadores/amortiguador/aplicar/1.jpg
