@@ -2,12 +2,17 @@ services:
   - type: web
     name: mega-madera
     env: node
-    rootDir: .  # 👈 raíz del proyecto: MegaMadera
+    rootDir: .  # raíz del repo (MegaMadera/)
     buildCommand: |
-      cd Frontend && npm install && npm run build
+      cd Frontend
+      echo "VITE_API_BASE=https://mega-madera.onrender.com/api" > .env
+      echo "VITE_PUBLIC_BASE=https://mega-madera.onrender.com" >> .env
+      npm install && npm run build
       cd ../Backend && npm install
     startCommand: node Backend/server.js
     envVars:
       - key: MONGO_URI
-        value: TU_MONGO_URI
+        value: mongodb+srv://grecolucianogabriel:hMqtEVCXFx9pqSI0@cluster0.5fd0etk.mongodb.net/megamadera?retryWrites=true&w=majority&appName=Cluster0
+      - key: PORT
+        value: 4000
     autoDeploy: true
