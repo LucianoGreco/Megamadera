@@ -1307,7 +1307,48 @@ Estructura del Proyecto:
 ││                           ├── 1.jpg
 ││                           ├── 2.jpg
 ││                           └── 3.jpg
-│├── render.yaml
+│├── 📁 public
+││   ├── 📁 assets
+││   │   ├── 1-CdGz2cik.png
+││   │   ├── 2-DeYo49qh.png
+││   │   ├── breakpoints-Cl0g07MV.js
+││   │   ├── contactos-B2lm-Nky.js
+││   │   ├── contactos-BDp9lsar.png
+││   │   ├── Cookies-BVlQVOjp.js
+││   │   ├── facebook-EFQmTYkZ.png
+││   │   ├── gmail-Dq6Crg58.png
+││   │   ├── herrajes-B7Mycg28.png
+││   │   ├── herrajes-Dix8S1-F.png
+││   │   ├── herrajes-DPh1uBN4.js
+││   │   ├── home-DlxB3xlm.js
+││   │   ├── index-D0cUJPDZ.js
+││   │   ├── instagram-l32FqvJx.png
+││   │   ├── logo-DnSKDPJ0.png
+││   │   ├── maps-n2uVEVZu.png
+││   │   ├── melaminas-8Kzfq0jD.png
+││   │   ├── melaminas-BiHkIS4o.png
+││   │   ├── melaminas-DpX7XZa_.js
+││   │   ├── muebles-B-XSVY8_.js
+││   │   ├── muebles-CqQfUENS.png
+││   │   ├── muebles-Z_uykHN5.png
+││   │   ├── normalizeTree-LpHbLW8i.js
+││   │   ├── Privacidad-Dt4UVP46.js
+││   │   ├── ProductoCategoria-PE9ZH5gn.js
+││   │   ├── ProductoDestacado-gnmdsiTo.js
+││   │   ├── revestimientos-9KdycCh4.png
+││   │   ├── revestimientos-B3GydtBU.png
+││   │   ├── revestimientos-DluJGZmW.js
+││   │   ├── simulador-C67jp7CT.png
+││   │   ├── simulador-CsCLOfb3.png
+││   │   ├── simulador-DyvYb2pB.js
+││   │   ├── Slider-lMCY7ZUP.js
+││   │   ├── Terminos-CM4xFbnq.js
+││   │   ├── useProductos-B9EDYsbv.js
+││   │   ├── vinilos-5R8wqooW.png
+││   │   ├── vinilos-bjIsJPU5.js
+││   │   ├── vinilos-YNMVe4s2.png
+││   │   └── whatsApp-CYFxbOdM.png
+││   └── index.html
 │├── 📁 routes
 ││   └── products.routes.js
 │├── 📁 seed
@@ -5257,6 +5298,17 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: "Error interno del servidor" });
 });
+
+
+
+
+const distPath = path.join(__dirname, "../Frontend/dist");
+app.use(express.static(distPath));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(distPath, "index.html"));
+});
+
 
 // ❌ Ruta no encontrada
 app.use((req, res) => {

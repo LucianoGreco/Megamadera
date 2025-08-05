@@ -2,11 +2,11 @@ services:
   - type: web
     name: mega-madera
     env: node
-    rootDir: Backend
+    rootDir: .  # 👈 raíz del proyecto: MegaMadera
     buildCommand: |
-      cd ../Frontend && npm install && npm run build
-      npm install
-    startCommand: node server.js
+      cd Frontend && npm install && npm run build
+      cd ../Backend && npm install
+    startCommand: node Backend/server.js
     envVars:
       - key: MONGO_URI
         value: TU_MONGO_URI
