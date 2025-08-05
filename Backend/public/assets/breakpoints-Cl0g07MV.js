@@ -1,0 +1,1 @@
+const p={mobile:"480px",tablet:"768px",desktop:"1200px"};export{p as b};

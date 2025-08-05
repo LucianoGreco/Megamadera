@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: mega-madera
+    env: node
+    buildCommand: |
+      cd Frontend && npm install && npm run build &&
+      cd ../Backend && npm install
+    startCommand: node index.js
+    envVars:
+      - key: MONGO_URI
+        value: TU_MONGO_URI_AQUÍ
+    autoDeploy: true
+    rootDir: Backend

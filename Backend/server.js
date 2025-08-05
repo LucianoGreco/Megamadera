@@ -63,6 +63,17 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Error interno del servidor" });
 });
 
+
+const path = require("path");
+
+const distPath = path.join(__dirname, "../Frontend/dist");
+app.use(express.static(distPath));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(distPath, "index.html"));
+});
+
+
 // ❌ Ruta no encontrada
 app.use((req, res) => {
   res.status(404).json({ error: "Ruta no encontrada" });
